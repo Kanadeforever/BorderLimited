@@ -59,7 +59,7 @@ Unreal Engine 3 games aggressively restore window styles and create exclusive fu
 
 ## Configuration Reference
 
-ini example file to : [BorderLimited.ini](workspace\example\BorderLimited.ini)
+ini example file to : [BorderLimited.ini](workspace/example/BorderLimited.ini)
 
 | Section | Key | Default | Description |
 |---------|-----|---------|-------------|
