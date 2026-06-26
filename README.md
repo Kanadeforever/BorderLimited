@@ -167,4 +167,5 @@ BorderLimited 采用 **MIT 许可证**。详见 [LICENSE](../LICENSE)。
 - [SRWE](https://github.com/dtzxporter/SRWE) by dtzxporter — XOR 位清除技巧 + WM_EXITSIZEMOVE 启发
 - [MinHook](https://github.com/TsudaKageyu/minhook) by Tsuda Kageyu — API Hook 库
 - [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader) by ThirteenAG — ASI 插件加载器
-- 项目图标 夫人的随手涂鸦
+- 项目图标 — 夫人的随手涂鸦
+- DeepSeek — 借给人们翅膀的存在
