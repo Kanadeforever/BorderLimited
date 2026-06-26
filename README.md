@@ -4,7 +4,7 @@ Windows 游戏通用无边框全屏 ASI 插件。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE) [![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20%7C%20x86-lightgrey)]()
 
-[English](README.md) | [中文](README_CN.md)
+中文 | [English](README_EN.md)
 
 ---
 
