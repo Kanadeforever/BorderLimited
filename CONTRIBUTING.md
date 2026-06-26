@@ -7,7 +7,7 @@ Thanks for your interest in contributing! This document outlines the development
 ## Getting Started
 
 1. **Clone** the repository
-2. **Build** the ASI plugin and Config GUI (see [README](README.md#building))
+2. **Build** the ASI plugin and Config GUI (see [README_EN](README_EN.md#building))
 3. **Test** on a real game before submitting changes
 
 ## Development Environment
