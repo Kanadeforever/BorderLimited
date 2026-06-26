@@ -166,4 +166,5 @@ This project includes [MinHook](https://github.com/TsudaKageyu/minhook) (BSD 2-C
 - [SRWE](https://github.com/dtzxporter/SRWE) by dtzxporter — XOR bit-clear technique & WM_EXITSIZEMOVE inspiration
 - [MinHook](https://github.com/TsudaKageyu/minhook) by Tsuda Kageyu — API hooking library
 - [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader) by ThirteenAG — ASI plugin loader
-- Icon My wife's Rakugaki
+- Icon — My wife's Rakugaki
+- DeepSeek — The existence that lends people wings
