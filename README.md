@@ -60,7 +60,7 @@ BorderLimited 是一个能将游戏的窗口变为无边框窗口（全屏）的
 
 ## 配置项完整参考
 
-ini示例文件在: [BorderLimited.ini](workspace\example\BorderLimited.ini)
+ini示例文件在: [BorderLimited.ini](workspace/example/BorderLimited.ini)
 
 | 分类 | 配置项 | 默认值 | 说明 |
 |------|-------|--------|------|
