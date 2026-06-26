@@ -4,7 +4,7 @@ A universal borderless fullscreen tool for Windows games, delivered as an ASI pl
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE) [![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20%7C%20x86-lightgrey)]()
 
-[English](README.md) | [中文](README_CN.md)
+[中文](README.md) | English
 
 ---
 
