@@ -146,7 +146,7 @@ workspace/
 
 **窗口无变化？** 检查游戏目录下的 `BorderLimited.log`。如果 `EnableLog=0`，使用 [DebugView](https://learn.microsoft.com/en-us/sysinternals/downloads/debugview) 查看实时调试输出。
 
-**UE3 游戏窗口缩小到角落？** 在 INI 中设置 `UE3Mode=1`。
+**虚幻3引擎的游戏会反复窗口化？（已知英雄无敌5也会）** 在 INI 或设置程序中设置 `UE3Mode=1`或者启用UE3模式。
 
 **配置修改不生效？** 用配置 GUI 重新保存一次 INI，确保 UTF-8 编码正确。
 
