@@ -145,7 +145,8 @@ workspace/
 
 **Window unchanged?** Check `BorderLimited.log` in the game directory. If `EnableLog=0`, use [DebugView](https://learn.microsoft.com/en-us/sysinternals/downloads/debugview) to see live debug output.
 
-**UE3 game shrinks to corner?** Set `UE3Mode=1` in the INI.
+
+**Games using the Unreal Engine 3 keep switching to windowed mode? (Heroes of Might and Magic V does this too)** Set `UE3Mode=1` in the INI or configuration program, or enable UE3 mode.
 
 **Config changes ignored?** Re-save the INI with the Config GUI to ensure correct UTF-8 encoding.
 
