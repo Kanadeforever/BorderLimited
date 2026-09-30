@@ -22,4 +22,4 @@ SOFTWARE.
 
 -------------------------------------------------------------------------------
 This project includes MinHook (https://github.com/TsudaKageyu/minhook),
-licensed under the BSD 2-Clause License. See minhook-master/LICENSE.txt.
+licensed under the BSD 2-Clause License. See thirdparty/minhook/LICENSE.txt.

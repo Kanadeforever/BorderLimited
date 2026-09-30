@@ -42,7 +42,7 @@ extern std::atomic<HWND> g_hLastWindow;
 // MinHook — 轻量级 x86/x64 API Hook 库，通过改写目标函数入口的
 // 前几条指令实现跳转（JMP）到我们的钩子函数，同时生成跳板函数
 // 以便在钩子内部调用原始 API
-#include "..\..\..\参考项目\minhook-master\include\MinHook.h"
+#include "..\..\..\thirdparty\minhook\include\MinHook.h"
 
 #include <d3d9.h>   // IDirect3D9, D3DPRESENT_PARAMETERS, D3DDISPLAYMODE
 

@@ -2,7 +2,7 @@
 
 Windows 游戏通用无边框全屏 ASI 插件。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE) [![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20%7C%20x86-lightgrey)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20%7C%20x86-lightgrey)]()
 
 中文 | [English](README_EN.md)
 
@@ -60,7 +60,7 @@ BorderLimited 是一个能将游戏的窗口变为无边框窗口（全屏）的
 
 ## 配置项完整参考
 
-ini示例文件在: [BorderLimited.ini](workspace/example/BorderLimited.ini)
+ini示例文件在: [BorderLimited.ini](source/example/BorderLimited.ini)
 
 | 分类 | 配置项 | 默认值 | 说明 |
 |------|-------|--------|------|
@@ -99,43 +99,51 @@ ini示例文件在: [BorderLimited.ini](workspace/example/BorderLimited.ini)
 
 ### 构建 ASI 插件
 
-```bash
-bash workspace/scripts/build.sh
+```bat
+source\build_asi.bat
 ```
 
-产物：`workspace/build/BorderLimited.x64.asi` + `BorderLimited.x86.asi`
+产物：`source/build/BorderLimited.x64.asi` + `BorderLimited.x86.asi`
 
 ### 构建配置 GUI
 
-```bash
-bash workspace/scripts/build_gui.sh
+```bat
+source\build_cfg.bat
 ```
 
-产物：`workspace/build/BorderLimitedConfig.exe`（约 700KB，单文件）
+产物：`source/build/BorderLimitedConfig.exe`（约 320KB，单文件）
+
+> 两个 bat 的路径全部从脚本自身位置推导，仓库移动或改名后无需修改；
+> 脚本先用 `vswhere` 定位 Visual Studio，找不到才回退扫描常见安装路径。
 
 ---
 
 ## 目录结构
 
 ```
-workspace/
-├── src/
-│   ├── BorderLimited/           # ASI 插件源码 (C++)
-│   │   ├── main.cpp             #   DllMain 入口 + 工作线程
-│   │   ├── config.h / .cpp      #   INI 解析器
-│   │   ├── window.h / .cpp      #   窗口操作实现
-│   │   ├── ue3.h / .cpp         #   UE3 D3D9 Hook 模式
-│   │   └── native.h             #   Win32 API 辅助函数
-│   └── BorderLimitedConfig/     # 配置 GUI 源码 (C++/Win32)
-│       ├── main.cpp             #   主对话框 + 预览窗口
-│       ├── config_io.h / .cpp   #   INI 读写
-│       ├── lang.h               #   中英文语言包
-│       └── BorderLimitedConfig.rc # 对话框资源（VS 可视化编辑）
-├── scripts/
-│   ├── build.sh                 # ASI 构建脚本 (x64 + x86)
-│   └── build_gui.sh             # GUI 构建脚本
-├── archive/                     # 历史版本快照
-└── build/                       # 构建产物
+BorderLimited/
+├── source/
+│   ├── build_asi.bat            # ASI 构建脚本 (x64 + x86)
+│   ├── build_cfg.bat            # 配置 GUI 构建脚本
+│   ├── src/
+│   │   ├── BorderLimited/       # ASI 插件源码 (C++)
+│   │   │   ├── main.cpp         #   DllMain 入口 + 工作线程
+│   │   │   ├── config.h / .cpp  #   INI 解析器
+│   │   │   ├── window.h / .cpp  #   窗口操作实现
+│   │   │   ├── ue3.h / .cpp     #   UE3 D3D9 Hook 模式
+│   │   │   └── native.h         #   Win32 API 辅助函数
+│   │   └── BorderLimitedConfig/ # 配置 GUI 源码 (C++/Win32)
+│   │       ├── main.cpp         #   主对话框 + 预览窗口
+│   │       ├── config_io.h/.cpp #   INI 读写
+│   │       ├── lang.h           #   中英文语言包
+│   │       ├── icon.ico         #   程序图标
+│   │       └── BorderLimitedConfig.rc # 对话框资源（VS 可视化编辑）
+│   ├── example/
+│   │   └── BorderLimited.ini    # INI 示例文件
+│   ├── temp/                    # 编译中间产物
+│   └── build/                   # 构建产物
+└── thirdparty/
+    └── minhook/                 # MinHook 源码 (BSD 2-Clause)
 ```
 
 ---
@@ -154,7 +162,7 @@ workspace/
 
 ## 许可证
 
-BorderLimited 采用 **MIT 许可证**。详见 [LICENSE](../LICENSE)。
+BorderLimited 采用 **MIT 许可证**。详见 [LICENSE](LICENSE)。
 
 本项目包含 [MinHook](https://github.com/TsudaKageyu/minhook)（BSD 2-Clause, Copyright (C) 2009-2017 Tsuda Kageyu）。
 

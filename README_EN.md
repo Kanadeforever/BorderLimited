@@ -2,7 +2,7 @@
 
 A universal borderless fullscreen tool for Windows games, delivered as an ASI plugin.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE) [![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20%7C%20x86-lightgrey)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20%7C%20x86-lightgrey)]()
 
 [中文](README.md) | English
 
@@ -59,7 +59,7 @@ Unreal Engine 3 games aggressively restore window styles and create exclusive fu
 
 ## Configuration Reference
 
-ini example file to : [BorderLimited.ini](workspace/example/BorderLimited.ini)
+ini example file to : [BorderLimited.ini](source/example/BorderLimited.ini)
 
 | Section | Key | Default | Description |
 |---------|-----|---------|-------------|
@@ -94,47 +94,57 @@ ini example file to : [BorderLimited.ini](workspace/example/BorderLimited.ini)
 - Windows 10+
 - Visual Studio 2019 (MSVC 14.29) or compatible
 - Windows SDK 10.0.26100.0+
-- [MinHook](https://github.com/TsudaKageyu/minhook) source placed in `../minhook-master/` (BSD 2-Clause, included as a dependency)
+- [MinHook](https://github.com/TsudaKageyu/minhook) source (BSD 2-Clause, already vendored in `thirdparty/minhook`)
+
+Both bat files live in `source/` — double-click them, or run them from a command prompt:
 
 ### Build ASI Plugin
 
-```bash
-bash workspace/scripts/build.sh
+```bat
+source\build_asi.bat
 ```
 
-Output: `workspace/build/BorderLimited.x64.asi` + `BorderLimited.x86.asi`
+Output: `source/build/BorderLimited.x64.asi` + `BorderLimited.x86.asi`
 
 ### Build Config GUI
 
-```bash
-bash workspace/scripts/build_gui.sh
+```bat
+source\build_cfg.bat
 ```
 
-Output: `workspace/build/BorderLimitedConfig.exe` (~700KB, single-file)
+Output: `source/build/BorderLimitedConfig.exe` (~320KB, single-file)
+
+> Both bats derive every path from their own location, so the repo can be moved or renamed freely.
+> They locate Visual Studio through `vswhere` first and only fall back to scanning common install paths.
 
 ---
 
 ## Project Structure
 
 ```
-workspace/
-├── src/
-│   ├── BorderLimited/           # ASI plugin source (C++)
-│   │   ├── main.cpp             #   DllMain + worker thread
-│   │   ├── config.h / .cpp      #   INI parser
-│   │   ├── window.h / .cpp      #   Window operations
-│   │   ├── ue3.h / .cpp         #   UE3 D3D9 Hook mode
-│   │   └── native.h             #   Win32 API helpers
-│   └── BorderLimitedConfig/     # Config GUI source (C++/Win32)
-│       ├── main.cpp             #   Dialog + preview overlay
-│       ├── config_io.h / .cpp   #   INI read/write
-│       ├── lang.h               #   CN/EN language pack
-│       └── BorderLimitedConfig.rc # Dialog resource (VS editable)
-├── scripts/
-│   ├── build.sh                 # ASI build (x64 + x86)
-│   └── build_gui.sh             # GUI build
-├── archive/                     # Historical snapshots
-└── build/                       # Build outputs
+BorderLimited/
+├── source/
+│   ├── build_asi.bat            # ASI build script (x64 + x86)
+│   ├── build_cfg.bat            # Config GUI build script
+│   ├── src/
+│   │   ├── BorderLimited/       # ASI plugin source (C++)
+│   │   │   ├── main.cpp         #   DllMain + worker thread
+│   │   │   ├── config.h / .cpp  #   INI parser
+│   │   │   ├── window.h / .cpp  #   Window operations
+│   │   │   ├── ue3.h / .cpp     #   UE3 D3D9 Hook mode
+│   │   │   └── native.h         #   Win32 API helpers
+│   │   └── BorderLimitedConfig/ # Config GUI source (C++/Win32)
+│   │       ├── main.cpp         #   Dialog + preview overlay
+│   │       ├── config_io.h/.cpp #   INI read/write
+│   │       ├── lang.h           #   CN/EN language pack
+│   │       ├── icon.ico         #   App icon
+│   │       └── BorderLimitedConfig.rc # Dialog resource (VS editable)
+│   ├── example/
+│   │   └── BorderLimited.ini    # INI example
+│   ├── temp/                    # Intermediate build files
+│   └── build/                   # Build outputs
+└── thirdparty/
+    └── minhook/                 # MinHook source (BSD 2-Clause)
 ```
 
 ---
@@ -154,7 +164,7 @@ workspace/
 
 ## License
 
-BorderLimited is licensed under the **MIT License**. See [LICENSE](../LICENSE) for details.
+BorderLimited is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 This project includes [MinHook](https://github.com/TsudaKageyu/minhook) (BSD 2-Clause, Copyright (C) 2009-2017 Tsuda Kageyu).
 
