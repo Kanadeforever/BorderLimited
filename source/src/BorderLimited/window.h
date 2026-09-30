@@ -4,8 +4,6 @@
 // window.h — 窗口操作 API 声明
 //
 // WindowManager 命名空间提供 BorderLimited ASI 插件的所有窗口级操作。
-// 对标原版 Borderless Gaming 的 Manipulation.cs（窗口修改）和
-// Native.cs（系统级功能）。
 //
 // 【线程安全性约定】
 //   本文件中声明的函数不提供内部同步机制。

@@ -12,12 +12,6 @@
 //   没有用类的原因：所有状态都是 static 的（进程内单例），
 //   用命名空间减少一层 this 指针传递。
 //
-// 【对标参考】
-//   原版 Borderless Gaming:
-//     Manipulation.cs — 窗口修改（MakeBorderless 等）
-//     Native.cs — 系统级功能（任务栏/光标/DPI）
-//   SRWE (Simple Runtime Window Editor):
-//     XOR 位清除技巧 + WM_EXITSIZEMOVE 启发
 // ===================================================================
 
 #include "window.h"
